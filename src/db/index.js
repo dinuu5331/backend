@@ -6,7 +6,7 @@ dotenv.config(); // Load environment variables from .env file
 
 const connectDB = async () => {
     try {
-        const connectionInstance = await mongoose.connect(`${process.env.MONGO_URL}/${DB_NAME}`);
+         mongoose.connect("mongodb://localhost:27017/dineshDB");
         console.log("Database connected successfully..!!");
     } catch (err) {
         console.error("Error while connecting to database..!!", err);
