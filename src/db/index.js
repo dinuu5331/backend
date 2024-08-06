@@ -3,10 +3,11 @@ import dotenv from "dotenv";
 import { DB_NAME } from "../constants.js";
 
 dotenv.config(); // Load environment variables from .env file
+const db = "mongodb://localhost:27017/DineshDB"
 
 const connectDB = async () => {
     try {
-         mongoose.connect("mongodb://localhost:27017/dineshDB");
+        const connectionInstance = await mongoose.connect(db);
         console.log("Database connected successfully..!!");
     } catch (err) {
         console.error("Error while connecting to database..!!", err);
